@@ -12,12 +12,6 @@ $ zig fmt vendor/requestz/lib/h11/lib/http/src/headers/name.zig
 $ zig fmt vendor/requestz/lib/h11/lib/http/src/methods.zig
 $ zig fmt vendor/requestz/lib/h11/src/state_machines/client.zig
 $ zig build
-.\vendor\requestz\src\response.zig:5:20: error: unable to find 'http'
-const StatusCode = @import("http").StatusCode;
-                   ^
-.\vendor\requestz\src\response.zig:15:13: note: referenced here
-    status: StatusCode,
-            ^
-.\src\main.zig:11:34: note: referenced here
-    var response = try client.get("http://httpbin.org/get", .{});
+.\vendor\requestz\lib\zig-network\network.zig:1130:66: error: callconv 'Stdcall' is only available on x86, not x86_64
+        extern "ws2_32" fn freeaddrinfo(res: *addrinfo) callconv(.Stdcall) void;
 ```
