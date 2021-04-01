@@ -8,6 +8,7 @@ pub fn main() anyerror!void {
     var client = try Client.init(std.testing.allocator);
     defer client.deinit();
 
-    // var response = try client.get("http://httpbin.org/get", .{});
-    // defer response.deinit();
+    var response = try client.get("http://httpbin.org/get", .{});
+    print("{}", .{response});
+    defer response.deinit();
 }

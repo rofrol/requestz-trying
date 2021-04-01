@@ -44,6 +44,7 @@ pub fn build(b: *std.build.Builder) void {
         network,
         h11,
     } });
+    exe.addPackage(http);
     exe.install();
 
     const run_cmd = exe.run();
