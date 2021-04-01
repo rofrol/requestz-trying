@@ -43,8 +43,8 @@ pub fn build(b: *std.build.Builder) void {
     exe.addPackage(.{ .name = "requestz", .path = "vendor/requestz/src/main.zig", .dependencies = &.{
         network,
         h11,
+        http,
     } });
-    exe.addPackage(http);
     exe.install();
 
     const run_cmd = exe.run();
